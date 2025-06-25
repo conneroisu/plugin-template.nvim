@@ -10,7 +10,34 @@ Clone/download it locally and change the references to `my_awesome_plugin`,
 `my_cool_module` accordingly to your new plugin name. Don't forget to edit the
 [help][help] file accordingly.
 
-You'll need to install [Lua][lua] and [LuaRocks][luarocks] to run the linter.
+### Development Environment
+
+This project supports development with Nix Flake for a consistent, reproducible development environment.
+
+#### Using Nix (Recommended)
+
+If you have Nix with flakes enabled:
+
+```bash
+# Enter the development shell
+nix develop
+
+# Or with direnv installed
+direnv allow
+```
+
+The Nix development shell provides:
+- Lua and LuaRocks
+- Lua Language Server (lua-language-server)
+- Code formatters (stylua, alejandra)
+- Linters (luacheck via luarocks, statix, deadnix)
+- YAML tools (yaml-language-server, actionlint)
+- Custom command `dx` to edit the flake.nix
+
+#### Manual Setup
+
+If not using Nix, you'll need to manually install:
+- [Lua][lua] and [LuaRocks][luarocks] to run the linter
 
 ## Testing
 
